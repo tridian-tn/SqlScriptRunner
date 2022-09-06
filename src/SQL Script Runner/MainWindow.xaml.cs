@@ -1,22 +1,12 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Security;
-using System.Security.Cryptography;
 using System.Text;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
 using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
 using System.IO;
 using Microsoft.SqlServer.Management.Smo;
 using Microsoft.SqlServer.Management.Common;
-using System.Xml;
 using System.Xml.Serialization;
 using System.Collections.ObjectModel;
 using System.Text.RegularExpressions;
@@ -741,7 +731,7 @@ namespace SQL_Script_Runner
 				server.ConnectionContext.Connect();
 			}
 			// Catch all connection errors.
-			catch (Exception ex)
+			catch (Exception)
 			{
 				// If this was a forceful connection attempt, rethrow the error so that it gets displayed to the user in the RunWorkerCompleted function.
 				if (settings.ForceConnect)
